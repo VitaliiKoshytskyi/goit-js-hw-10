@@ -49,7 +49,11 @@ console.log(data.length)
             return createCountryInfoMarkup(data)
    }
        
-    }).catch(()=>Notify.failure("Oops, there is no country with that name"))
+    }).catch(() => {
+        countryContainer.innerHTML = ''
+            listEl.innerHTML = ''
+         return Notify.failure("Oops, there is no country with that name")
+    })
 
 }
 
